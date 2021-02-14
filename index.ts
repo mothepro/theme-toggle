@@ -47,9 +47,12 @@ export default class extends LitElement {
     if (changed.has('theme')) {
       document.body.setAttribute('theme', this.theme)
 
-      for (const theme of [Theme.DARK, Theme.LIGHT])
-        for (const stylesheet of this.stylesheets[theme])
+      if (changed.get('theme')) // Not the first load to avoid the flicker
+        for (const theme of [Theme.DARK, Theme.LIGHT])
+          for (const stylesheet of this.stylesheets[theme]) {
             stylesheet.disabled = theme != this.theme
+            stylesheet.media = theme == this.theme ? 'all' : 'not all'
+          }
 
       if (this.persistent)
         localStorage.setItem('theme', this.theme)
