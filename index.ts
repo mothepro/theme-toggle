@@ -41,7 +41,7 @@ export default class extends LitElement {
   }
 
   protected updated(changed: PropertyValues) {
-    if (changed.has('localStorage') && this.localStorage)
+    if (changed.has('persistent') && this.persistent)
       this.theme = localStorage.getItem('theme') as Theme ?? this.theme 
     
     if (changed.has('theme')) {
@@ -51,7 +51,7 @@ export default class extends LitElement {
         for (const stylesheet of this.stylesheets[theme])
             stylesheet.disabled = theme != this.theme
 
-      if (this.localStorage)
+      if (this.persistent)
         localStorage.setItem('theme', this.theme)
       
       this.dispatchEvent(new CustomEvent('theme-change', { detail: this.theme }))

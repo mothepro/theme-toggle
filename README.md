@@ -1,6 +1,6 @@
-# Theme Toggle
+# `<theme-toggle>`
 
-> Web Component to natively toggle site theme
+> Web Component to natively change your site's theme
 
 [![npm](https://img.shields.io/npm/v/@mothepro/theme-toggle.svg)](https://www.npmjs.com/package/@mothepro/theme-toggle)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@mothepro/theme-toggle)
@@ -13,7 +13,8 @@
 
 | Attribute | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| `hidden` | `boolean` | `false` | Whether the element should be displayed |
+| `persistent` | `boolean` | `false` | Whether the theme should be saved on reload |
+| `theme` | `dark` | `light` | `light` | The theme to use, this attribute is added to the `<body>` too |
 
 <!--
 Inline demo for webcomponents.org
@@ -35,5 +36,9 @@ Inline demo for webcomponents.org
 -->
 <script type="module" src="//unpkg.com/@mothepro/theme-toggle/dist/esm/index.js?module"></script>
 
-
+Click to change theme to
+<theme-toggle persistent>
+  <u slot="light">dark</u>
+  <u slot="dark">light</u>
+</theme-toggle>.
 ```
