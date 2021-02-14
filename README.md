@@ -14,7 +14,7 @@
 | Attribute | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
 | `persistent` | `boolean` | `false` | Whether the theme should be saved on reload |
-| `theme` | `dark` | `light` | `light` | The theme to use, this attribute is added to the `<body>` too |
+| `theme` | `dark` or `light` | `light` | The theme to use, this attribute is added to the `<body>` too |
 
 <!--
 Inline demo for webcomponents.org
